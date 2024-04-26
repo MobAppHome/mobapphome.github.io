@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #064ff8;
+            margin-bottom: 20px;
+        }
+
+        p,
+        ol {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        a {
+            color: #000;
+            /* Updated to black */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .action,
+        .keyword {
+            color: #000;
+            /* Updated to black */
+            font-weight: bold;
+        }
+
+        .link {
+            color: #064ff8;
+            /* Updated to black */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Delete User Data</h1>
+    <p>This page provides instructions on how to delete user data for the game <span class="action"
+            id="appNameSpan">Millionaire</span> using <span class="action">Google Play Games service</span>.</p>
+
+    <p><strong>Note:</strong> We do not create any <span class="keyword">internal account</span> for the game. Instead,
+        we utilize the "<span class="keyword">Google Play Games</span>" service to manage scores and rating lists. To
+        remove data from the "<span class="keyword">Play Games</span>", please follow the instructions below:</p>
+
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Go to your games profile page <a href="https://play.google.com/games/profile"
+                class="link">https://play.google.com/games/profile</a>.</li>
+        <li>Click '<span class="action">Your data</span>'.</li>
+        <li>Select '<span class="action">Delete Play Games account & data</span>'.</li>
+        <li>Find the app "<b><span class="appName">Millionaire</span></b>" and click '<span
+                class="action">Delete</span>'.</li>
+        <li>Follow the prompts to confirm and accept the deletion.</li>
+    </ol>
+
+    <script>
+        // Get application name from query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const appName = urlParams.get('appName') || 'Millionaire';
+
+        // Update all elements with class "appName" with the application name
+        const appNameElements = document.querySelectorAll('.appName');
+        appNameElements.forEach(element => {
+            element.textContent = appName;
+        });
+
+        // Additionally update 'appNameSpan' if specific updates are needed
+        const appNameSpan = document.getElementById('appNameSpan');
+        if (appNameSpan) {
+            appNameSpan.textContent = appName;
+        }
+    </script>
+</body>
+
+</html>
